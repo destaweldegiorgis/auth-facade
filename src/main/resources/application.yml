@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: auth-facade
+  main:
+    allow-bean-definition-overriding: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      authCB:
+        registerHealthIndicator: true
+        slidingWindowSize: 5
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+  timelimiter:
+    instances:
+      authCB:
+        timeoutDuration: 3s
+jwt:
+  secret: "MySuperSecureJwtKeyThatIsAtLeast32Bytes!"
+
+downstream:
+  mock-url: http://localhost:8080/mock/authorize
