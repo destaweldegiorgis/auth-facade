@@ -72,3 +72,18 @@ To simplify Postman testing, we’ve included:
 
 JwtTokenGeneratorTest (under test/java/com.apple.auth.authfacade.util)
 This test class generates a valid JWT token locally so that you can easily copy and use it in your Authorization: Bearer <token> header.
+
+### Sample cURL
+
+curl --location 'http://localhost:8080/users/authorize' \
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiUk9MRV9VU0VSIiwic3ViIjoidGVzdC11c2VyIiwiaWF0IjoxNzUyODUzOTI0LCJleHAiOjE3NTI4NTQ1MjR9.tck-OVh1M6Mk6vRJvUeZMEo7njiHhrYxQb3NrDb3EVQ' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: JSESSIONID=7AE87E0BEE2EBA14F8B42077CA3D8838' \
+--data '{
+"userId": "123",
+"action": "read",
+"resource": "document-456"
+}'
+
+### Sample test screenshot 
+![img.png](img.png)

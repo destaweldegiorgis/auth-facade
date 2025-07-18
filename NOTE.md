@@ -18,4 +18,4 @@
 ### Testing JWT with Postman
   A helper class JwtTokenGeneratorTest (under test/util) is included to locally generate JWT tokens for testing the /users/authorize endpoint via Postman.
   
-Note: I have also attached my test cURL and postman response screenshot in the description.
+Note: I have also attached my test cURL and postman response screenshot in the README.md description.
