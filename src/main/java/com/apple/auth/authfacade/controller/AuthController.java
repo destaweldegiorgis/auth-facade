@@ -20,7 +20,7 @@ public class AuthController {
 
     @PostMapping("/authorize")
     public Mono<ResponseEntity<AuthResponse>> authorize(@Valid @RequestBody AuthRequest request) {
-        log.info("🔐 Received API call for /authorize. userId={}, action={}, resource={}",
+        log.info("Received API call for /authorize. userId={}, action={}, resource={}",
                 request.getUserId(), request.getAction(), request.getResource());
 
         return reactiveAuthorizationService.authorize(request)
